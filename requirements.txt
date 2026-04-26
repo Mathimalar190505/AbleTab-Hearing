@@ -1,0 +1,38 @@
+# AbleTab Laptop Prototype — Python Dependencies
+# ==============================================
+# Install everything with:
+#   pip install -r requirements.txt
+#
+# Then install Tesseract (system package, NOT pip):
+#   Windows → https://github.com/UB-Mannheim/tesseract/wiki
+#             Download installer → install → add to PATH
+#   macOS   → brew install tesseract
+#   Linux   → sudo apt install tesseract-ocr
+
+# ── Core ──────────────────────────────────────
+pyttsx3>=2.90           # Offline text-to-speech (Windows/macOS/Linux)
+SpeechRecognition>=3.10 # Voice command recognition
+
+# ── Audio Recording ───────────────────────────
+sounddevice>=0.4.6      # Cross-platform mic recording (recommended)
+scipy>=1.11.0           # Needed by sounddevice for WAV saving
+# If sounddevice fails on your system, install pyaudio instead:
+# pyaudio>=0.2.14       # (uncomment this line)
+
+# ── Webcam + OCR ──────────────────────────────
+opencv-python>=4.8.0    # Webcam capture and image preprocessing
+pytesseract>=0.3.10     # Python wrapper for Tesseract OCR
+
+# ── Numpy (dependency of OpenCV) ──────────────
+numpy>=1.24.0
+
+# ── Optional: offline speech recognition ──────
+# pocketsphinx>=5.0.0   # Offline STT fallback (uncomment to install)
+#                       # Note: accuracy lower than Google, but no internet
+
+# ── Audio playback (built-in on most systems) ─
+# Windows → winsound    (built-in, no install needed)
+# macOS   → afplay      (built-in, no install needed)
+# Linux   → aplay       (install: sudo apt install alsa-utils)
+# Fallback:
+# pygame>=2.5.0         # Uncomment if built-in playback fails
