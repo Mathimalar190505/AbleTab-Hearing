@@ -14,11 +14,23 @@ Hardware replaced:
 import os
 import sys
 import time
+from sign_language.gesture_mapper import map_text_to_gesture
+from sign_language.avatar_player import play_gesture
+
+
 
 sys.path.insert(0, os.path.dirname(__file__))
 
 from utils.tts import speak
 from utils.session import create_session_folder
+
+def run_sign_language(text):
+    from sign_language.gesture_mapper import map_text_to_gesture
+    from sign_language.avatar_player import play_gesture
+
+    gestures = map_text_to_gesture(text)
+    play_gesture(gestures)
+
 
 
 def choose_mode():
@@ -52,11 +64,23 @@ def main():
     if mode == "live":
         speak("Starting Live Class Mode.")
         session_folder = create_session_folder()
+        
+        # 🔥 TEMP TEST (remove later)
+        sample_text = "hello yes"
+        print("\n[Sign Language Output - Live Mode]")
+        run_sign_language(sample_text)
+
         from modes.live_class import run_live_class
         run_live_class(session_folder)
 
     elif mode == "revision":
         speak("Starting Revision Mode.")
+
+        # 🔥 TEMP TEST (remove later)
+        sample_text = "thanks no"
+        print("\n[Sign Language Output - Revision Mode]")
+        run_sign_language(sample_text)
+
         from modes.revision import run_revision
         run_revision()
 

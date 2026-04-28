@@ -1,0 +1,28 @@
+# AbleTab-Hearing — Sign Language Avatar Extension
+# Install with: pip install -r requirements_sign.txt
+
+# Core (likely already in your project)
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# NLP preprocessing (lightweight, no ML)
+# nltk is optional — we use our own minimal stemmer by default
+# nltk>=3.8.1
+
+# If you want NLTK for better lemmatisation (uncomment):
+# nltk>=3.8.1
+
+# Speech recognition (already in your project)
+SpeechRecognition>=3.10.0
+pyaudio>=0.2.13
+
+# Testing
+pytest>=7.4.0
+
+# Optional: for 3D avatar (advanced track)
+# pyglet>=2.0.0          # lightweight 3D window
+# trimesh>=4.0.0         # load .glb / .gltf models
+# pyopengl>=3.1.7
+
+# Optional: yt-dlp for downloading ISL video datasets
+# yt-dlp>=2024.1.0

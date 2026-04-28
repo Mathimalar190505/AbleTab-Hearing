@@ -1,0 +1,16 @@
+# ISL Avatar System — Requirements
+# pip install -r requirements.txt
+
+# Core
+opencv-python>=4.8.0
+numpy>=1.24.0
+speechrecognition>=3.10.0
+
+# Audio backend (choose one based on OS)
+# Windows/Mac:
+pyaudio>=0.2.13
+# Linux (if pyaudio fails):
+# pipenv install pyaudio  OR  apt install portaudio19-dev && pip install pyaudio
+
+# Optional: faster fuzzy matching for CSLRT lookup
+# (standard library difflib is used by default — no extra install needed)
